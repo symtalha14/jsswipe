@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="swipe-container">
+        <div class="swipe-wrapper">
+            <div>
+                <iframe src="127.0.0.1:8000/" frameborder="0"></iframe>
+            </div>
+            <div>
+                <iframe src="127.0.0.1:8000/" frameborder="0"></iframe>
+            </div>
+            <div>
+                <iframe src="127.0.0.1:8000/" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+</body>
+
+<style>
+    *{
+        margin:0;
+        padding: 0;
+        
+    }
+    body{
+        overflow: hidden;
+    }
+    #swipe-container{
+        width:100%;
+        height: 100vh;
+      
+    }
+    .swipe-wrapper{
+        width: 100vw;
+        height: 100%;
+        
+       
+    }
+    .swipe-wrapper div{
+        width: 100vw;
+        height: 100%;
+        position: absolute;
+       top:0;
+       
+        transition: all .1s ease-in-out;
+            
+
+    }
+    
+</style>
+<script>
+    var swipeWrapper = document.querySelector('.swipe-wrapper');
+    var slides = swipeWrapper.children;
+    console.log(slides);
+    for(let i=0;i<slides.length;i++){
+        slides[i].style.left=i*100+'%';
+    }
+</script>
+<script src="swipe.js"></script>
+</html>
